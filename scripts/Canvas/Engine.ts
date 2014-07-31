@@ -1,15 +1,15 @@
 ﻿module Engine
 {
-	export class World implements IDrawable
+	export class World implements IDrawable, IUpdatable
 	{
-		worldObjects: IDrawable[] = [];
+		worldObjects: IWorldObject[] = [];
 
 		constructor()
 		{
 
 		}
 
-		addObject(object: IDrawable)
+		addObject(object: IWorldObject)
 		{
 			this.worldObjects.push(object);
 		}
@@ -19,6 +19,14 @@
 			for (var obj in this.worldObjects)
 			{
 				this.worldObjects[obj].draw(context, camera);
+			}
+		}
+
+		update()
+		{
+			for (var obj in this.worldObjects)
+			{
+				this.worldObjects[obj].update();
 			}
 		}
 	}
@@ -45,8 +53,8 @@
 		{
 			var tl = this.getTopLeft();
 			return new Vector2D(
-				(absolutePosition.x - tl.x) * this.canvasSize.x,
-				(absolutePosition.y - tl.y) * this.canvasSize.x);
+				(absolutePosition.x - tl.x) / this.canvasSize.x,
+				(absolutePosition.y - tl.y) / this.canvasSize.x);
 		}
 
 		scaleToPx(num: number): number
@@ -59,6 +67,14 @@
 	{
 		draw(context: CanvasRenderingContext2D, camera: Camera);
 	}
+
+	export interface IUpdatable
+	{
+		update();
+	}
+
+	export interface IWorldObject extends	IDrawable, IUpdatable
+	{	}
 
 	export class Vector2D
 	{
@@ -112,7 +128,7 @@
 		}
 	}
 
-	export class SimpleObj implements IDrawable
+	export class SimpleObj implements IDrawable, IUpdatable
 	{
 		position: Vector2D;
 		velocity: Vector2D;
@@ -128,6 +144,12 @@
 		draw(context: CanvasRenderingContext2D, camera : Camera)
 		{
 
+		}
+
+		update()
+		{
+			this.position = this.position.AddVector(this.velocity);
+			this.velocity = this.velocity.MultiplyByVector(this.acceleration);
 		}
 	}
 

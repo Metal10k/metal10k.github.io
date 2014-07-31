@@ -19,6 +19,12 @@ var Engine;
                 this.worldObjects[obj].draw(context, camera);
             }
         };
+
+        World.prototype.update = function () {
+            for (var obj in this.worldObjects) {
+                this.worldObjects[obj].update();
+            }
+        };
         return World;
     })();
     Engine.World = World;
@@ -35,7 +41,7 @@ var Engine;
 
         Camera.prototype.getRelativePosition = function (absolutePosition) {
             var tl = this.getTopLeft();
-            return new Vector2D((absolutePosition.x - tl.x) * this.canvasSize.x, (absolutePosition.y - tl.y) * this.canvasSize.x);
+            return new Vector2D((absolutePosition.x - tl.x) / this.canvasSize.x, (absolutePosition.y - tl.y) / this.canvasSize.x);
         };
 
         Camera.prototype.scaleToPx = function (num) {
@@ -92,6 +98,11 @@ var Engine;
             this.acceleration = acceleration || new Vector2D(0, 0);
         }
         SimpleObj.prototype.draw = function (context, camera) {
+        };
+
+        SimpleObj.prototype.update = function () {
+            this.position = this.position.AddVector(this.velocity);
+            this.velocity = this.velocity.MultiplyByVector(this.acceleration);
         };
         return SimpleObj;
     })();

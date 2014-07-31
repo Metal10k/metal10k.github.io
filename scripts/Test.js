@@ -10,7 +10,7 @@
 
             this.world = new Engine.World();
 
-            var rect = new Engine.Rect(new Engine.Vector2D(10, 10));
+            var rect = new Engine.Rect(new Engine.Vector2D(10, 10), new Engine.Vector2D(0, 0.01));
             this.world.addObject(rect);
             this.camera = new Engine.Camera(10);
         }
@@ -24,6 +24,7 @@
         Bootstrapper.prototype.tick = function () {
             this.context.clearRect(0, 0, 100, 100);
             this.world.draw(this.context, this.camera);
+            this.world.update();
         };
         return Bootstrapper;
     })();
