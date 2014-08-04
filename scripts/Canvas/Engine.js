@@ -102,7 +102,7 @@ var Engine;
 
         SimpleObj.prototype.update = function () {
             this.position = this.position.AddVector(this.velocity);
-            this.velocity = this.velocity.MultiplyByVector(this.acceleration);
+            this.velocity = this.velocity.AddVector(this.velocity.MultiplyByVector(this.acceleration));
         };
         return SimpleObj;
     })();
@@ -110,8 +110,8 @@ var Engine;
 
     var Rect = (function (_super) {
         __extends(Rect, _super);
-        function Rect() {
-            _super.apply(this, arguments);
+        function Rect(position, velocity, acceleration) {
+            _super.call(this, position, velocity, acceleration);
         }
         Rect.prototype.draw = function (context, camera) {
             var relativePosition = camera.getRelativePosition(this.position);

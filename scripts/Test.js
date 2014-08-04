@@ -10,7 +10,7 @@
 
             this.world = new Engine.World();
 
-            var rect = new Engine.Rect(new Engine.Vector2D(10, 10), new Engine.Vector2D(0, 0.01));
+            var rect = new Engine.Rect(new Engine.Vector2D(10, 10), new Engine.Vector2D(0, 0.1));
             this.world.addObject(rect);
             this.camera = new Engine.Camera(10);
         }

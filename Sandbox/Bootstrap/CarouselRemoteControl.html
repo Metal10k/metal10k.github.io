@@ -1,0 +1,201 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title></title>
+	<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet"/>
+	<style>
+		/*.top-section
+		{
+			position: fixed;
+		}*/
+		.blue
+		{
+			background-color: lightcyan;
+		}
+
+		.shift-left {
+    margin-left: -35% !important;
+	margin-right: -35% !important;
+}
+
+.shift-right {
+    margin-left: 0px !important;
+}
+div, body{
+    -webkit-transition: width 1s, margin 0.3s ease;
+    -moz-transition: width 1s, margin 0.3s ease;
+    -o-transition: width 1s, margin 0.3s ease;
+    transition: width 2s, margin 1s ease, transform 2s;
+}
+
+/*.navbar
+{
+	position: fixed;
+	width:100%;
+}*/
+
+.nav
+{
+
+}
+
+.navbar-header
+{
+
+}
+
+.rightfixed
+{
+	top:50px;
+	position: fixed;
+	z-index: 100;
+	right:0px;
+	background-color: black;
+}
+
+	</style>
+	<script type="text/javascript">
+		$(function () {
+			$("#menuButton").click(function () {
+				//alert("Test");
+				$("#navthing").toggleClass("shift-left");
+				//$("body").toggleClass("shift-left");
+			});
+		});
+	</script>
+</head>
+	<body>
+		<div class="navbar-fixed-top blue">
+			<a id="menuButton" class="btn btn-primary pull-right">menu</a>
+		</div>
+		<div class="nav rightfixed bs-sidebar" id="navthing" >
+			<ul class="nav  pull-left">
+				<li class="active"><a data-target="#carousel-example-generic" data-slide-to="0">Item 1</a></li>
+				<li><a data-target="#carousel-example-generic" data-slide-to="1">Item 2</a></li>
+				<li><a href="#panel5">Item 3</a></li>
+			</ul>
+		</div>
+		<div class="content">
+			<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+				<!-- Indicators -->
+				<ol class="carousel-indicators">
+					<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+					<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+
+				</ol>
+
+				<!-- Wrapper for slides -->
+				<div class="carousel-inner">
+					<div id="carousel-item1" class="item active">
+
+						<div class="carousel-caption">
+							caption 1
+						</div>
+						This is some content<br />
+						page1
+						<br />
+						<br />
+						<br />
+					</div>
+					<div id="carousel-item2" class="item">
+						<div class="carousel-caption">
+							caption 2
+						</div>
+						This is some content<br />
+						page2
+						<br />
+						<br />
+						<br />
+					</div>
+					<!--				<div>
+					    					Some static content here
+					    				</div>-->
+				</div>
+
+				<!-- Controls -->
+				<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+					<span class="glyphicon glyphicon-chevron-left"></span>
+				</a>
+				<a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+					<span class="glyphicon glyphicon-chevron-right"></span>
+				</a>
+			</div>
+		</div>
+		<div class="push"></div>
+		<div class="panel panel-primary">
+			<header class="panel-heading">
+				<h4 class="panel-title">Content1</h4>
+			</header>
+			<div class="panel-body">
+				Content<br />
+				Content<br />
+				Content<br />
+				Content<br />
+				Content<br />
+				Content<br />
+			</div>
+		</div>
+		<div class="panel panel-primary">
+			<header class="panel-heading">
+				<h4 class="panel-title">Content2</h4>
+			</header>
+			<div class="panel-body">
+				Content<br />
+				Content<br />
+				Content<br />
+				Content<br />
+				Content<br />
+				Content<br />
+			</div>
+		</div>
+		<div class="panel panel-primary">
+			<header class="panel-heading">
+				<h4 class="panel-title">Content3</h4>
+			</header>
+			<div class="panel-body">
+				Content<br />
+				Content<br />
+				Content<br />
+				Content<br />
+				Content<br />
+				Content<br />
+			</div>
+		</div>
+		<div class="panel panel-primary">
+			<header class="panel-heading">
+				<h4 class="panel-title">Content4</h4>
+			</header>
+			<div class="panel-body">
+				Content<br />
+				Content<br />
+				Content<br />
+				Content<br />
+				Content<br />
+				Content<br />
+			</div>
+		</div>
+		<div class="dropdown">
+			<a class="dropdown-toggle btn btn-default" data-toggle="dropdown" href="#">Dropdown trigger</a>
+			<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+				<li>a</li>
+				<li>b</li>
+			</ul>
+		</div>
+		<div class="panel panel-primary" id="panel5">
+			<header class="panel-heading">
+				<h4 class="panel-title">Content5</h4>
+			</header>
+			<div class="panel-body">
+				Content<br />
+				Content<br />
+				Content<br />
+				Content<br />
+				Content<br />
+				Content<br />
+			</div>
+		</div>
+
+	</body>
+</html>

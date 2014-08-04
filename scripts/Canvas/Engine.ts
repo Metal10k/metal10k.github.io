@@ -149,12 +149,17 @@
 		update()
 		{
 			this.position = this.position.AddVector(this.velocity);
-			this.velocity = this.velocity.MultiplyByVector(this.acceleration);
+			this.velocity = this.velocity.AddVector(this.velocity.MultiplyByVector(this.acceleration));
 		}
 	}
 
 	export class Rect extends SimpleObj
 	{
+		constructor(position: Vector2D, velocity?: Vector2D, acceleration?: Vector2D)
+		{
+			super(position, velocity, acceleration);
+		}
+
 		draw(context: CanvasRenderingContext2D, camera: Camera)
 		{
 			var relativePosition = camera.getRelativePosition(this.position);

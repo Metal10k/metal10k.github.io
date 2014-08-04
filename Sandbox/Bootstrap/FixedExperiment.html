@@ -1,0 +1,195 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title></title>
+		<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet"/>
+	<style>
+		.fixed
+		{
+			position:fixed;
+		}
+		.content
+		{
+			width: 100%;
+			height: 100%;
+		}
+		.half
+		{
+			height: 45%;
+			overflow:auto;
+		}
+		.top
+		{
+			
+		}
+		.header
+		{
+			height: 10%;
+		}
+		.margin
+		{
+			margin:20px;
+		}
+		.fullheight
+		{
+			height: 100%;
+		}
+		.col1
+		{
+
+			min-width: 200px;
+		}
+		.col2
+		{
+			float:right;
+			width: 350px;
+		}
+		@media(max-width: 600px) 
+		{
+			.shift-right
+			{
+				margin-right: -250px !important;
+			}
+		}
+		.menu
+		{
+			position: fixed;
+			height: 100%;
+			width: 250px;
+			z-index: 100;
+			background-color: darkblue;
+			right: 0px;
+		}
+		div
+		{
+			-webkit-transition: width 0.5s, margin 0.3s ease;
+			-moz-transition: width 0.5s, margin 0.3s ease;
+			-o-transition: width 0.5s, margin 0.3s ease;
+			transition: width 0.5s, margin 1s ease, transform 2s;
+		}
+		.push
+		{
+			height:400px;
+		}
+		#menuButton
+		{
+			margin-left:-100px;
+		}
+
+		@media(min-width: 600px) 
+		{
+			#menuButton
+			{
+				display:none;
+			}
+
+			.menu
+			{
+				
+			}
+		}
+
+			</style>
+	<script type="text/javascript">
+			$(function () {
+				$("#menuButton").click(function () {
+					$("#menu").toggleClass("shift-right");
+					//$("header").toggleClass("shift-right");
+				});
+			});
+	</script>
+</head>
+	<body>
+
+		<div class="fixed content">
+			<div class="header" style="background-color: orange;">
+				<div id="menu" class="menu shift-right">
+					<a id="menuButton" class="btn btn-info">menu</a>
+					<div>
+						<a class="btn btn-default">Carousel1</a>
+						<a class="btn btn-default" >Carousel2</a>
+						<a class="btn btn-default" href="#panel1">Something 1</a>
+						<a class="btn btn-default" href="#panel2">Something 2</a>
+						<a class="btn btn-default" href="#panel3">Something 3</a>
+						<a class="btn btn-default" href="#panel4">Something 4</a>
+						<a class="btn btn-default" href="#panel5">Something 5</a>
+					</div>
+				</div>
+			</div>
+			<div class="col1 fullheight">
+					<div class="top half" style="background-color: white">
+						<div class="panel panel-default margin visible-lg visible-md visible-sm">
+							<div class="panel-heading"><h4>I am a component</h4></div>
+							<div class="panel-body">Info</div>
+						</div>
+						<div class="panel panel-danger visible-xs">
+							<div class="panel-heading"><h4>PPPPPP</h4></div>
+							<div class="panel-body">I am a substitute panel</div>
+						</div>
+					</div>
+				<div class="bottom half" style="background-color: green;">
+					<div class="panel panel-default">
+						<div class="panel-heading"><h4>heading</h4></div>
+						<div class="panel-body" id="panel1">Content 1</div>
+					</div>
+					<div class="panel panel-danger">
+						<div class="panel-body" id="panel2">Content 2</div>
+					</div>
+					<div class="panel panel-danger">
+						<div class="panel-body" id="panel3">Content 3</div>
+					</div>
+					<div class="panel panel-danger" id="panel4">
+						<div class="panel-body">Content 4</div>
+					</div>
+					<div class="panel panel-danger" id="panel5">
+						<div class="panel-body">Content</div>
+					</div>
+					<div class="panel panel-default">
+						Content
+					</div>
+					<div class="panel panel-default">
+						Content
+					</div>
+					<div class="panel panel-default">
+						Content
+					</div>
+					<div class="panel panel-default">
+						Content
+					</div>
+					<div class="panel panel-default">
+						Content
+					</div>
+					<div class="panel panel-default">
+						Content
+					</div>
+					<div>
+						Content
+					</div>
+					<div>
+						Content
+					</div>
+					<div>
+						Content
+					</div>
+					<div>
+						Content
+					</div>
+					<div>
+						Content
+					</div>
+					<div class="row	">
+						<div class="span4">
+							someSpan
+						</div>
+						<div class="span8">some info</div>
+					</div>
+				</div>
+				</div>
+			<div class="menu">
+			
+			</div>
+		</div>
+</body>
+</html>
