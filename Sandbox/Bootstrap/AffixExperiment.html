@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title></title>
+		<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet"/>
+	<style>
+		.affix
+		{
+			background-color: black;
+			right:0px;
+			height:100%;
+			width:250px;
+			z-index : 100;
+		}
+		#menuButton
+		{
+			margin-left: -60px;
+		}
+
+		.shift-right
+		{
+			margin-right: -250px !important;
+		}
+		div
+		{
+			transition: width 0.3s, margin 0.3s ease, transform 2s;
+		}
+	</style>
+	<script type="text/javascript">
+			$(function () {
+				$("#menuButton").click(function () {
+					$(".menu").toggleClass("shift-right");
+					//$("header").toggleClass("shift-right");
+				});
+				
+			});
+	</script>
+</head>
+	<body>
+		<div class="row">
+			<div class="col-xs-9 panel">
+				Some content
+				Some content
+				Some content
+				Some content
+				Some content
+				Some content
+				Some content
+				Some content
+				Some content
+				Some content
+				Some content
+				Some content
+				Some contentSome content
+				Some content
+				Some content
+				Some content
+				Some content
+				Some content
+
+			</div>
+			<div class="col-xs-3">
+				<div class="menu affix affix-top visible-lg visible-md">
+					<ul class="nav" data-spy="affix" data-offset-top="0">
+						<li class="active"><a href="#one">Section One</a></li>
+						<li><a href="#two">Section Two</a></li>
+						<li><a href="#three">Section Three</a></li>
+						<li><a>Some other action</a></li>
+						<li><a>Some other action</a></li>
+						<li><a>Some other action</a></li>
+						<li><a>Some other action</a></li>
+						<li><a>Some other action</a></li>
+					</ul>
+				</div>
+				<div class="menu affix affix-top shift-right visible-sm visible-xs">
+					<div><a id="menuButton" class="btn btn-info">>></a></div>
+					<ul class="nav" data-spy="affix" data-offset-top="0">
+						<li class="active"><a href="#one">Section One</a></li>
+						<li><a href="#two">Section Two</a></li>
+						<li><a href="#three">Section Three</a></li>
+						<li><a>Some other action</a></li>
+						<li><a>Some other action</a></li>
+						<li><a>Some other action</a></li>
+						<li><a>Some other action</a></li>
+						<li><a>Some other action</a></li>
+					</ul>
+				</div>
+			</div>
+			<div id="one" class="col-xs-9 panel">
+				<div>content</div><div>content</div><div>content</div>
+				<div>This is a very line of content This is a very line of content This is a very line of content This is a very line of content This is a very line of content</div>
+				<div>content</div><div>content</div><div>content</div><div>content</div><div>content</div><div>content</div>
+			</div>
+			<div class="col-xs-9">
+				<div>content</div><div>content</div><div>content</div><div>content</div><div>content</div><div>content</div><div>content</div><div>content</div><div>content</div><div>content</div>
+				<div>content</div><div>content</div><div>content</div><div>content</div><div>content</div><div>content</div><div>content</div><div>content</div><div>content</div><div>content</div>
+				<div>content</div><div>content</div><div>content</div><div>content</div><div>content</div><div>content</div><div>content</div><div>content</div><div>content</div><div>content</div>
+				<div>content</div><div>content</div><div>content</div><div>content</div><div>content</div><div>dd</div><div>content</div><div>content</div><div>content</div><div>content</div>
+				<div id="two"><h4>two</h4>
+				<div>content</div><div>content</div><div>content</div><div>content</div><div>content</div><div>gg</div><div>content</div><div>content</div><div>content</div><div>content</div>
+				<div>content</div><div>content</div><div>content</div><div>content</div><div>content</div><div>content</div><div>content</div><div>content</div><div>content</div><div>content</div>
+					<div>content</div><div>content</div><div>gg</div><div>content</div><div>content</div><div>gg</div><div>content</div><div>content</div><div>content</div><div>content</div>
+					</div>
+				<div id="three">
+					<h4>three</h4>
+					<div>content</div><div>content</div><div>content</div><div>content</div><div>content</div><div>content</div><div>content</div><div>content</div><div>content</div><div>content</div>
+					<div>content</div><div>content</div><div>content</div><div>content</div><div>content</div><div>dd</div><div>content</div><div>content</div><div>content</div><div>content</div>
+					<div>content</div><div>content</div><div>content</div><div>content</div><div>content</div><div>content</div><div>content</div><div>content</div><div>content</div><div>content</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

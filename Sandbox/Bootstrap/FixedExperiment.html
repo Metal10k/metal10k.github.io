@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<title></title>
-		<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
 	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet"/>
 	<style>
@@ -46,13 +46,11 @@
 			float:right;
 			width: 350px;
 		}
-		@media(max-width: 600px) 
-		{
 			.shift-right
 			{
 				margin-right: -250px !important;
 			}
-		}
+
 		.menu
 		{
 			position: fixed;
@@ -67,7 +65,7 @@
 			-webkit-transition: width 0.5s, margin 0.3s ease;
 			-moz-transition: width 0.5s, margin 0.3s ease;
 			-o-transition: width 0.5s, margin 0.3s ease;
-			transition: width 0.5s, margin 1s ease, transform 2s;
+			transition: width 0.5s, margin0.5s ease, transform 2s;
 		}
 		.push
 		{
@@ -76,19 +74,6 @@
 		#menuButton
 		{
 			margin-left:-100px;
-		}
-
-		@media(min-width: 600px) 
-		{
-			#menuButton
-			{
-				display:none;
-			}
-
-			.menu
-			{
-				
-			}
 		}
 
 			</style>

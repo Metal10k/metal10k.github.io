@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title></title>
+		<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+		<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+		<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet"/>
+		<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/knockout/3.1.0/knockout-min.js"></script>
+		<script src="../../scripts/KnockoutObservables/WindowObservableFactory.js"></script>
+		<style type="text/css">
+			.col1
+			{
+				background-color: red;
+			}
+			.col2
+			{
+				background-color: blue;
+			}
+			.col3
+			{
+				background-color: green;
+			}
+			div
+			{
+				width: 300px;
+				height: 100px;
+			}
+		</style>
+		<script>
+			$(function () {
+				var vm = 
+				{ 
+					observableXs: KnockoutObservables.WindowObservableFactory.CreateObservableFromString('xs'),
+					observableSm: KnockoutObservables.WindowObservableFactory.CreateObservableFromString('sm'),
+					observableMd: KnockoutObservables.WindowObservableFactory.CreateObservableFromString('md'),
+					observableLg: KnockoutObservables.WindowObservableFactory.CreateObservableFromString('lg')
+				};
+			
+				ko.applyBindings(vm);
+			});
+		</script>
+	</head>
+		<div class="device-xs visible-xs"></div>
+		<div class="device-sm visible-sm"></div>
+		<div class="device-md visible-md"></div>
+		<div class="device-lg visible-lg"></div>
+	<body>
+		<div data-bind="css: { col1: observableXs().isBreakpoint}">Xtra Small</div>
+		<div data-bind="css: { col1: observableSm().isBreakpoint }">Small</div>
+		<div data-bind="css: { col1: observableMd().isBreakpoint }">Medium</div>
+		<div data-bind="css: { col1: observableLg().isBreakpoint }">Large</div>
+	</body>
+</html>
