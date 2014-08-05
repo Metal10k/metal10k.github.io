@@ -5,8 +5,7 @@
 	<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
 	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet"/>
-	<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/knockout/3.1.0/knockout-min.js"></script>
-	<script src="../../scripts/KnockoutObservables/WindowObservableFactory.js"></script>
+
 	<style>
 		.fixed
 		{
@@ -38,38 +37,42 @@
 			height: 45%;
 			overflow:auto;
 		}
+		.right {
+			width: 250px;
+			height: 100%;
+			float: right;
+			background: black;
+		}
+		.left
+		{
+			width: auto;
+			height: 100%;
+			float:none;
+			overflow: hidden;
+		}
 	</style>
 </head>
 	<body>
 		<div class="fixed content">
-			<table>
-				<tr>
-					<td>
-						<div class="header">
-						
-						</div>
-					</td>
-					<td class="inline-well-right visible-lg visible-md" rowspan="3">
-						Inline well gets rendered here @partial()
-					</td>
-				</tr>
-				<tr>
-					<td class="top half">
-						<div  style="background-color: white">
-						<div class="panel panel-default margin visible-lg visible-md visible-sm">
-							<div class="panel-heading"><h4>I am a component</h4></div>
-							<div class="panel-body">Info</div>
-						</div>
-						<div class="panel panel-danger visible-xs">
-							<div class="panel-heading"><h4>PPPPPP</h4></div>
-							<div class="panel-body">I am a substitute panel</div>
-						</div>
+			<div class="right visible-lg visible-md">
+				right
+			</div>
+			<div class="left">
+				<div class="header">
+					left leftleftleftleftleftleftleftleftleftleftleftleftleftleftleftleftleftleftleftleftleftleftleftleftleftleftleftleftleftleftleftleftleftleftleftleftleftleftleftleftleft
+					leftleftleftleftleftleftleftleftleftleftleftleftleftleftleftleftleftleftleftleftleftleftleftleftleftleftleftleftleftleftleftleftleftleftleftleftleftleftleftleftleft
+				</div>
+				<div class="top half" style="background-color: white">
+					<div class="panel panel-default margin visible-lg visible-md visible-sm">
+						<div class="panel-heading"><h4>I am a component</h4></div>
+						<div class="panel-body">Info</div>
 					</div>
-					</td>
-				</tr>
-				<tr>
-					<td class="bottom half">
-						<div  style="background-color: green;">
+					<div class="panel panel-danger visible-xs">
+						<div class="panel-heading"><h4>PPPPPP</h4></div>
+						<div class="panel-body">I am a substitute panel</div>
+					</div>
+				</div>
+				<div class="bottom half" style="background-color: green;">
 					<div class="panel panel-default">
 						<div class="panel-heading"><h4>heading</h4></div>
 						<div class="panel-body" id="panel1">Content 1</div>
@@ -84,33 +87,18 @@
 						<div class="panel-body">Content 4</div>
 					</div>
 					<div class="panel panel-danger" id="panel5">
-						<div class="panel-body">Content</div>
-					</div>
-					<div class="panel panel-default">
-						Content
-					</div>
-					<div class="panel panel-default">
-						Content<br/>
-						Content<br/>
-						Content<br/>
-						Content<br/>
-						Content<br/>
-						Content<br/>
-						Content<br/>
-						Content<br/>
-						Content<br/>
-						Content<br/>
-					</div>
-					<div class="row	">
-						<div class="span4">
-							someSpan
+						<div class="panel-body">
+							Content<br/>
+							Content<br/>
+							Content<br/>
+							Content<br/>
+							Content<br/>
+							Content<br/>
+							Content<br/>
 						</div>
-						<div class="span8">some info</div>
 					</div>
 				</div>
-					</td>
-				</tr>
-			</table>
+			</div>
 		</div>
 	</body>
 </html>
